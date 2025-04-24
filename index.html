@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Blue Surf Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+       <nav>
+        <ul>
+            <li><a class=active href="#">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./service.html">Service</a></li>
+            <li class="logo"><img src="./images/surfing-Logo .png" alt="logo"></li>
+            <li><a href="./location.html">Locations</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li class="booknowbutton"><a href="#booknow">Book Now</a></li>
+        </ul>
+      </nav>
+
+    <main>
+        
+    <img class='fixed-img'src="images/ocean-background-with-borads.jpg" alt="海洋及衝浪背景圖">
+
+      <section class="background-img"></section>
+
+      <section class="info-square">
+        <div class="squares">
+            <div class="square">
+                <h3>Private Lesson</h3>
+                <img src="./images/teacher-surfer.png" alt="">
+            </div>
+            <div class="square">
+                <h3>Group Lesson</h3>
+                <img src="./images/teaching-surf.png" alt="">
+            </div>
+            <div class="square">
+                <h3>Rental Service</h3>
+                <img src="./images/boards-with-trees.jpg" alt="">
+            </div>
+            <div class="square">
+                <h3>Photography Service</h3>
+                <img src="./images/photographer-on-beach.png" alt="">
+            </div>
+        </div>
+      </section>
+      <section class="empty-container">
+        <h3>Anyone can surf!</h3>
+        <p>Our experienced, patient and the friendliest instructors can get anyone up on a wave.
+            We can teach anyone from ages 5 to 75.
+            <br>Our goals are for you to have fun (safely) and make awesome memories.</p>
+      </section>
+
+      <section class="our_location">
+        <div class="location_info">
+            <h3>GREAT LOCATION</h3>
+            <p>
+                Wushi Harbor North Jetty <br>
+                Wushi Harbor North Embankment Surfing Spot
+            </p>
+            <div class="find_more_location">
+            <input type="button" value="Find more" name="按鈕名稱">
+            </div>
+        </div>
+        <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7239.382112016255!2d121.83763481129118!3d24.874399158677434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467f708d69ef169%3A0x89b000dd3bfc395d!2sWushi%20Harbor%20North%20Jetty!5e0!3m2!1sen!2stw!4v1740294364076!5m2!1sen!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    </main>
+    <footer class="footer_info">
+        <div class="footer-informations">
+        <h3>About Us</h3>
+        <p>Life is better when you surf! At Ocean Blue Surf Club, we bring the thrill of surfing to Wushi Harbor, Yilan. Whether you're a beginner or a pro, 
+            our expert instructors are here to guide you through the waves. Join our surf family and ride with us!</p>
+        </div>
+        <div class="footer-informations">
+            <h3>Contact</h3>
+        <p>📧 Email: hello@yoursurfshop.com <br>📞 Phone: +886 9XX-XXX-XXX <br>📸 Instagram: @yoursurfshop <br>📍 Facebook: [Your Surf Shop Page]</p>
+        </div>
+        <div class="footer-informations">
+        <h3>Information</h3>
+        <p>🏄 Private & Group Lessons<br>🏄 Surfboard Rentals <br>📸 Surf Photography Services<br>👕 Surf Gear & Apparel</p>
+        </div>
+        <div class="footer-informations">
+        <h3>Location</h3>
+        <p>📌 Wushi Harbor North Jetty, Yilan, Taiwan <br>🕒 Open Daily: 7 AM - 6 PM</p>
+        </div>
+    </footer>
+<script>
+    setInterval(()=>{
+        let topbackground=document.querySelector('section.background-img');
+
+        if (topbackground.style.backgroundImage == 'url("./images/board-background.jpg")') 
+        {
+            topbackground.style.backgroundImage = 'url("./images/man-surfing-red-clothes.jpg")';
+        }else if (
+            topbackground.style.backgroundImage == 'url("./images/man-surfing-red-clothes.jpg")')
+        {
+            topbackground.style.backgroundImage = 'url("./images/close-surfing-move.jpg")';
+        } else{
+            topbackground.style.backgroundImage = 'url("./images/board-background.jpg")';
+        }
+
+    }, 2000);
+</script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+:root {
+    --themecolor: rgb(71, 222, 233);
+}
+
+.fixed-img{
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -5;
+    padding: 0;
+    opacity: 0.8;
+    
+}
+nav{
+    padding: 0px;
+    margin-top: 0px;
+    height: 120px;
+    padding-bottom: 10px;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content:space-around;
+    align-items: center;
+    padding-bottom: 20px;
+   
+}
+
+ li {
+    padding: 2rem;
+    font-size: 20px;
+    font-weight: 300px;
+ }
+
+ a {
+    text-decoration: none;
+    color:black
+ }
+
+.logo img{
+    width: 120px;  /* 你想要的大小 */
+    height: auto;  /* 保持圖片比例 */
+}
+
+.booknowbutton a {
+    padding: 10px;
+    border: 2px solid ;
+    background-color:rgb(71, 222, 233);
+    color: azure;
+}
+
+.fixed-img{
+    min-height: 100vh;
+}
+
+section.background-img {
+    margin-top: 20px;
+    min-height: 450px;
+    background-image: url('./images/board-background.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+section.info-square{
+    background-color:white;
+    margin-top: 20px;
+}
+.squares{
+    padding: 15px;
+}
+div.squares{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+div.square{
+flex: 0 1 250px;
+padding: 0px;
+position: relative;
+}
+
+.square img{
+    width:100%;
+    height: 250px;
+    display: block;
+}
+
+.square h3{
+color:white;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+border: 2px solid white;
+background-color:rgba(0, 0, 0, 0.5);
+white-space:nowrap;
+padding: 5px;
+}
+
+.empty-container{
+min-height: 70vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.empty-container h3{
+   font-size: 2.2rem;
+   color: white;
+   text-shadow: black 0.05em 0.05em 0.05em;
+}
+.empty-container p{
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.our_location{
+width: 100%;
+background-color: white;
+display: flex;
+padding-top: 20px;
+justify-content: space-between;
+}
+.location_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5vh;
+}
+.location_info h3{
+    width: 100%;
+    font-size: 2rem;
+}
+.location_info p{
+    margin: 2px;
+}
+
+input{
+    border:2px solid black;
+    background-color:white;;
+    color:black;
+    cursor:pointer;
+    font-size: 1rem;
+    margin-top: 10vh;
+    padding: 15px 35px;
+}
+  
+  input:hover{
+    color:white;
+    background-color:#003C9D;
+    border:2px #003C9D solid;
+  }
+
+  .footer_info {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(55, 52, 52, 0.6);
+    margin-top: 10px;
+    color: white;
+    text-align: left;
+    padding: 40px 5%; /* 增加左右內距，避免緊貼邊緣 */
+    flex-wrap: wrap; /* 當螢幕變窄時換行 */
+}
+
+.footer_informations {
+    flex: 1 1 250px; /* 最小 250px，確保可以收縮 */
+    max-width: 25%; /* 確保四等分 */
+    padding: 20px; /* 避免 padding 影響佈局 */
+    box-sizing: border-box; /* 避免 padding 影響 width 計算 */
+}
+
+/*以下是about頁面*/
+.about_main_background {
+    display: flex;
+    position: relative; /* 讓子元素 absolute 定位參考 */
+    width: 100%;
+    height: 90vh;
+}
+.about_background{
+    height: 100%;
+    width: 100%;
+}
+.about_background_note{
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    color: white;
+    text-align: right;
+    
+}
+    /*position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: right;
+
+    /*以下是service頁面*/
+.service_main_background {
+    display: flex;
+    position: relative; /* 讓子元素 absolute 定位參考 */
+    width: 100%;
+    height: 100vh;
+}
+.service_background_images{
+    height: 100%;
+    width: 100%;
+}
+.service_background_note{
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    color: white;
+    text-align: right;
+}
+
+    /*以下是location頁面*/
+    .location_main_background{
+        position: relative;
+    }
+    .location_background_image{
+        max-height: 100vh;
+        width: 500px;
+    }
+    .location_background_note {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%); /* 把自己高度的一半往上移，達到垂直置中 */
+        color: black;
+        text-align: right;
+    }
+    
+    /*以下是contact頁面*/
+    .contact_background{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+    }
+    .contact_background_image{
+        position: relative;
+        background-image: url('./images/half_sand_half_beach_orange.pdf');
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .contact_background_image_note{
+        position:absolute;
+        top:40%;
+        left:10%;
+        text-align:left;
+        transform: translateY(-50%);
+        color: white;
+    }
+    .contact_background_image_note h1{
+        font-size: 2rem;
+        margin-bottom: 0px;
+    }
+    .contact_service{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+    }
+    .contact_service_image{
+        max-height: 85vh;
+    }
+
+    .contact_service_image_note{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        left: 0px;
+        padding-left: 0px;
+    }
+    .contact_service_image_note h3{
+        color: #534f4fd0;
+    }
+    .contact_background_image_note_info1{
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+
+    .contact_background_image_note_info2{
+        padding: 10px;
+        margin-top: 15px;
+        border: none;
+        border-bottom:solid 2px black;
+    }
+
+    .contact_background_image_note_submit{
+        left: 0px;
+    }
+
+    .weatherAPI{
+        display: flex;
+    }
+
+    .weatherAPI_note {
+        flex: 1; /* 右邊一半 */
+        display: flex;
+        justify-content: flex-end; /* 讓 h3 靠右 */
+        align-items: center;       /* 垂直置中 */
+        padding-right: 20px;       /* 可選：讓 h3 有點距離不貼邊 */
+      }
+
+    .weatherAPI_note h3 {
+        margin: 0;
+        width: 100%;
+        text-align: right;
+    }
+
+    .card{
+        flex: 1; 
+        width:90%;
+        max-width: 470px;
+        background: linear-gradient(135deg, #00feba, #5b548a);
+        color: #fff;
+        margin-left: 0;
+        border-radius: 20px;
+        padding: 110px 35px;
+        text-align: center;
+        
+    }
+    .search{
+        width: 100%;
+        display: flex;
+        align-items: center;
+    
+    }
+
+    .search input{
+        border: 0;
+        outline: 0;
+        background: #ebfffc;
+        color: #555;
+        padding: 10px 25px;
+        border-radius: 30px;
+        height: 40px;
+        flex: 1;
+        margin-right: 16px;
+        font-size: 18px;
+        margin-bottom: 60px;
+
+    }
+
+    .search button{
+        border: 0;
+        outline: 0;
+        background-color: #ebfffc;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        cursor:pointer;
+    }
+    .search button img{
+        width: 16px;
+    }
+
+
+    .weather-icon{
+        width:170px;
+        margin-top: 30px;
+    }
+
+    .weather h1{
+        font-size: 80px;
+        font-weight: 500;
+        margin-top: -10px;
+    }
+    .weather h2{
+        font-size: 45px;
+        font-weight: 400;
+        margin-top: -20px;
+    }
+
+    .details{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding:0 20px;
+        margin-top: 50px;
+    }
+    .col{
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+    .col img{
+        width:50px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+
+    .humidity, .wind{
+        font-size: 16px;
+        margin-top: -6px;
+
+    }
+
+    .weather{
+        display:none;
+    }
+    .error{
+        text-align: left;
+        margin-left: 12px;
+        font-size: 16px;
+        margin-top: 10px;
+        display: none;
+    }

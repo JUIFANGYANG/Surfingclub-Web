@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Blue Surf Club | Location</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+       <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./service.html">Service</a></li>
+            <li class="logo"><img src="./images/surfing-Logo .png" alt="logo"></li>
+            <li><a class="active" href="#">Locations</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li class="booknowbutton"><a href="#booknow">Book Now</a></li>
+        </ul>
+      </nav>
+      <hr>
+
+      <main>
+        <div class="location_main_background">
+        <div>
+            <img class="location_background_image" src="./images/boards-infrontof-shop.jpg" alt="">
+        
+        </div>
+        <div class="location_background_note">
+            <h1>
+                Location
+            </h1>
+            <p>Offering all you need.</p>
+        </div>
+        </div>
+        <section class="our_location">
+            <div class="location_info">
+                <h3>GREAT LOCATION</h3>
+                <p>
+                    Wushi Harbor North Jetty <br>
+                    Wushi Harbor North Embankment Surfing Spot
+                </p>
+                <div class="find_more_location">
+                <input type="button" value="Find more" name="按鈕名稱">
+                </div>
+            </div>
+            <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7239.382112016255!2d121.83763481129118!3d24.874399158677434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467f708d69ef169%3A0x89b000dd3bfc395d!2sWushi%20Harbor%20North%20Jetty!5e0!3m2!1sen!2stw!4v1740294364076!5m2!1sen!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <section class="weatherAPI">
+            <div class="card">
+                <div class="search">
+                    <input type="text" placeholder="enter city name" spellcheck="false">
+                    <button><img src="./images-weather/search.png" alt=""></button>
+                </div>
+                <div class="error">
+                    <p> Invild city name</p>
+                </div>
+                <div class="weather">
+                    <img src="./images-weather/rain.png" class="weather-icon">
+                    <h1 class="temp">22°c</h1>
+                    <h2 class="city"> New York</h2>
+                    <div class="details">
+                        <div class="col">
+                            <img src="./images-weather/humidity.png">
+                            <div>
+                                <p class="humidity">50%</p>
+                                <p>Humidity</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="./images-weather/wind.png">
+                            <div>
+                                <p class="wind">15km/h</p>
+                                <p>Wind Speed</p>
+                            </div>
+                              
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="weatherAPI_note">
+                <h3>Check the weather now!</h3>
+            </div>
+           
+        </section>
+      </main>
+
+      <script>
+        const apiKey = "e487c79f3e300019d153294b4a8ff1e0";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        const WeatherIcon= document.querySelector(".weather-icon");
+
+        async function checkWeather(city) {
+          const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+          
+          if(response.status == 404){
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";
+          }else {
+
+          var data = await response.json();
+
+          console.log(data); // 可以用這行看資料長什麼樣
+
+          document.querySelector(".city").innerHTML= data.name;
+          document.querySelector(".temp").innerHTML= Math.round(data.main.temp)  + "°c";
+          document.querySelector(".humidity").innerHTML= data.main.humidity + "%";
+          document.querySelector(".wind").innerHTML= data.wind.speed + "km/h";
+
+    //接下來是隨著天氣變換圖片//
+
+    if (data.weather[0].main == "Clouds"){ 
+        WeatherIcon.src = "images-weather/clouds.png";
+    }
+    else if(data.weather[0].main == "Clear"){ 
+        WeatherIcon.src = "images-weather/clear.png";
+    }
+    else if(data.weather[0].main == "Rain"){ 
+        WeatherIcon.src = "images-weather/rain.png";
+    }
+    else if(data.weather[0].main == "Drizzle"){ 
+        WeatherIcon.src = "images-weather/drizzle.png";
+    }
+    else if(data.weather[0].main == "Mist"){ 
+        WeatherIcon.src = "images-weather/mist.png";
+    }
+    document.querySelector(".weather").style.display = "block";
+    document.querySelector(".error").style.display = "none";
+    
+
+          }
+          
+          
+   }
+    
+    
+        
+
+    searchBtn.addEventListener("click", ()=>{
+            checkWeather(searchBox.value);
+    });
+
+   
+    
+
+      </script>
+</body>
+<footer class="footer_info">
+    <div class="footer-informations">
+    <h3>About Us</h3>
+    <p>Life is better when you surf! At Ocean Blue Surf Club, we bring the thrill of surfing to Wushi Harbor, Yilan. Whether you're a beginner or a pro, 
+        our expert instructors are here to guide you through the waves. Join our surf family and ride with us!</p>
+    </div>
+    <div class="footer-informations">
+        <h3>Contact</h3>
+    <p>📧 Email: hello@yoursurfshop.com <br>📞 Phone: +886 9XX-XXX-XXX <br>📸 Instagram: @yoursurfshop <br>📍 Facebook: [Your Surf Shop Page]</p>
+    </div>
+    <div class="footer-informations">
+    <h3>Information</h3>
+    <p>🏄 Private & Group Lessons<br>🏄 Surfboard Rentals <br>📸 Surf Photography Services<br>👕 Surf Gear & Apparel</p>
+    </div>
+    <div class="footer-informations">
+    <h3>Location</h3>
+    <p>📌 Wushi Harbor North Jetty, Yilan, Taiwan <br>🕒 Open Daily: 7 AM - 6 PM</p>
+    </div>
+</footer>
+
+</html>
